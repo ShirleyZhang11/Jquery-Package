@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js中的创建节点和标签</title>
+	<meta charset="utf-8">
+</head>
+<body>
+  <div></div>
+  <script >
+    //1、
+  	 // var div = document.getElementsByTagName('div')[0];
+  	 // div.innerHTML = "<p>haha</p>";
+
+  	 //2、
+  	 var p =document.createElement('p');
+  	 //创建文本节点
+  	 var test =document.createTextNode('^-^');
+  	 //将文字节点追加到p
+  	 p.appendChild(test);
+  	 var div = document.getElementsByTagName('div')[0];
+  	  div.appendChild(p);
+  </script>
+</body>
+</html>

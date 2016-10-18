@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css样式</title>
+	<meta charset="utf-8">
+
+	<style>
+	</style>
+</head>
+<body>
+   <div class="box" style="color:red">1</div>
+   <div class="box" style="color:green">2</div>
+
+  <script type="text/javascript">
+   /*
+     box.style 可以设置样式，也可以获取样式，但只能对行内样式进行设置或者获取
+   */
+     //es5 es6
+     var box = document.getElementsByClassName('box')[0];
+    
+     //1、传入两个参数，第二个是对象，设置样式
+     css(box,{
+        'width': '500px',
+        'height': '300px',
+        'color': 'red',
+        'backgroundColor': 'yellow'
+    });
+     //2、传入两个参数，第二个是字符串,获取样式
+     var w = css(box,'width');
+     console.log(w); 
+     
+    //3、传入三个参数，肯定是设置
+     css(box,'color','blue');
+
+  	function css(dom,key,value) {
+       //取出传递过来的参数
+       var args = arguments;
+
+       //一、如果传递过来的参数是两个
+       if(args.length==2){
+
+         //1、字符串,获取样式
+         if(typeof(key)=='string'){
+           //是不是数组
+           if(dom.length){//是数组
+             return getStyle(dom[0],key); //只返回第一个样式
+           }else{
+             return getStyle(dom,key);
+           }
+          
+         }
+         //2、对象
+         if(typeof(key)=='object'){
+           //是不是数组
+           if(dom.length){
+             for(var i=0;i<dom.length;i++){            
+               for(v in key){ //v 变量  key 对象
+                  setStyle(dom[i],v,key[v]);
+               }
+             }
+           }else{
+             for(v in key){
+              setStyle(dom,v,key[v]);
+            }
+           }
+
+         }
+       //二、3个参数，只能是设置
+       }else if(args.length==3){
+          if(dom.length){
+            for(var i=0;i<dom.length;i++){              
+                setStyle(dom[i],key,value);            
+            }
+          }else{
+            setStyle(dom,key,value);       
+          }
+       }
+
+     }
+
+      //获取样式
+      function getStyle(element,key){
+      // //此方法只能获取行内样式
+        // return dom.style[key];
+        //console.log(dom.style);
+
+        //获取计算后的样式//如果没有传入value值，则代表获取
+        if(window.getComputedStyle){ //兼容性
+          return getComputedStyle(element,null)[key];
+        }
+        //IE
+        return element.currentStyle[key];
+       
+      }
+      //设置样式
+      function setStyle(element,key,value){       
+           element.style[key]=value;   
+      }
+
+  	
+  </script>
+</body>
+</html>

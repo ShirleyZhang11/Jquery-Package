@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+  <script>
+   var b = 4;
+   var a = {
+   	  b: 5,
+      scro:function() {
+      	console.log(this.b)
+      }
+  	}
+  	 var show=a.scro;
+  	// var show = function(){
+  	// 	console.log(this.b);
+  	// }
+     show();//4
+     
+     a.scro();//5
+  	
+
+  function aB(){
+  	var b = 8;
+  	console.log(this.b);
+  }
+  aB();//4
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="myjquery2.0.js"></script>
+    <style>
+    	.demo{
+    		width: 200px;
+    		height: 200px;
+    		background-color: red
+    	}
+    </style>
+
+</head>
+<body>
+  <div class="box"></div>
+  <div class="box demo" id="b"></div>
+  <div>点我</div>
+  <div>点我</div>
+
+
+  <script>
+  	// $('.box').addClass('demo');
+  	// // $('.box').removeClass('demo');
+    
+   //  var box = document.getElementById('b');
+   //  $(box) //将box包装为SQuery对象
+
+   //  $(document.getElementsByClassName('box'));//传入的是数组
+   
+   //测试
+   $('div').on('click',function(){
+   	 //通过$符号直接把dom包装为SQuery对象
+   	 $(this).css('color','red'); 
+   	  //$('div')
+   })
+  </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css样式</title>
+	<meta charset="utf-8">
+	<style>
+		#box{
+			width: 300px;
+		}
+	</style>
+</head>
+<body>
+  <div id="box">
+  	 div
+  </div>
+  <script type="text/javascript">
+   /*
+     box.style 可以设置样式，也可以获取样式，但只能对行内样式进行设置或者获取
+   */
+     //es5 es6
+     var box = document.getElementById('box');
+     // //给box设置样式
+     // css(box,'width','200px');
+     // css(box,'height','200px');
+     css(box,'backgroundColor','red');
+
+     //获取样式
+     var w = css(box,'width');
+     console.log(w); 
+     
+  	function css(dom,key,value) {
+      //是一个数组
+      if(dom.length){
+        //有value,说明是设置样式
+        if(value){
+           //把一组元素循环遍历全部设置
+          for(var i= 0;i<dom.length;i++){
+           setStyle(dom[i],key,value);
+         }
+         //没有value,说明要获取样式
+        }else{
+          //返回第一个元素的样式
+          return getStyle(dom[0],key);
+        }
+      //不是一个数组
+      }else{
+        
+        if(value){
+          setStyle(dom,key,value);
+        }else{
+          return getStyle(dom,key);
+        }
+      }
+
+      //获取样式
+      function getStyle(element,key){
+      // //此方法只能获取行内样式
+        // return dom.style[key];
+        //console.log(dom.style);
+
+        //获取计算后的样式//如果没有传入value值，则代表获取
+        if(window.getComputedStyle){ //兼容性
+          return getComputedStyle(element,null)[key];
+        }
+        //IE
+        return element.currentStyle[key];
+       }
+      }
+      //设置样式
+      function setStyle(element,key,value){      
+           element.style[key]=value;       
+      }
+
+  	
+  </script>
+</body>
+</html>

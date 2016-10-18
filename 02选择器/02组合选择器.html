@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="myjquery-2.js"></script>
+</head>
+<body>
+  <div class="box">div</div>
+  <h1 class="title">hss</h1>
+  <p id="test"> lala</p>
+  <span>s</span>
+
+  <script type="text/javascript">
+  //	$('.box,.title,#id,span')
+  
+   var a = group('.box,.title');
+   console.log(a);
+
+  function group(selector) {
+  	 var result = [];
+  	//分割字符串
+  	var arr = selector.split(','); 
+  	//循环数组
+  	arr.forEach(function(element,index){
+  		//取出第一个字符
+  		var firstChar = element.charAt(0);
+  		switch(firstChar){
+  			//类名
+  			case '.':
+  			  //数组
+              var r1 = $.class(element.substring(1));
+              //将一个数组加到另一个数组里面的方法
+              Array.prototype.push.apply(result,r1);
+             //或者调用外面的方法
+              //handelArr(r1)
+  			 break;
+  			 //id
+  			case '#':
+  			   //id不是数组将其转成数组
+              var r2 = [$.id(element.substring(1))]; 
+              Array.prototype.push.apply(result,r2);
+              //handelArr(r2)
+  			 break;
+  		     //tag
+  		    default:
+  		     //数组
+             var r3 = $.tag(element);
+			 Array.prototype.push.apply(result,r3);
+			 //handelArr(r3)
+  		    break;
+  		}
+
+  	});
+  	// function handleArr(array){
+  	// 	for(var i=0;i<array.length;i++){
+  	// 		result.push(array[i]);
+  	// 	}
+  	// }
+  	return result;
+  }
+
+
+  // //伪数组，没有foreach这个方法
+  // var boxes = document.getElementsByClassName('box');
+  // var a = {
+  // 	0 : 'a',
+  // 	1 : 'b',
+  // 	2 : 'c',
+  // 	3 : 'd',
+  // 	length:4
+  // }
+  // //将伪数组转成真正的数组
+  // var arr = [];
+  // for(var i = 0;i<arr.length;i++){
+  // 	arr[i] = a[i];
+  // }
+
+   var a1=[1,2,3];
+   var a2=[4];
+   //将a1数组加到a2数组里
+   Array.prototype.push.apply(a2,a1);
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>伪数组 each</title>
+	<meta charset="utf-8">
+  <script src = "myjquery-5.0加了each.js"></script>
+</head>
+<body>
+  <ul>
+  	<li>1</li>
+  	<li>2</li>
+  	<li>3</li>
+  	<li>4</li>
+  </ul>
+  <script>
+  //获取到查找到的真正 dom元素
+    // // console.log($('li').elements[0]);
+   //伪数组
+    // console.log($('li')[0]);
+
+    
+    // $('li').on('click',function () {
+    //   alert(this.innerHTML);
+    //   // $(this)
+    // });
+
+    $('li').each(function(){
+      alert(this); //这里的 this 指向实际的 dom 对象,因为在 each方法中改变了作用域
+    });
+
+    var c= $('li').css('color');
+    console.log(c);
+  </script>
+</body>
+</html>

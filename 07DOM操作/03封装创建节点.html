@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+  <div id="box"></div>
+  <script>
+  	// var div = document.getElementsByTagName('div')[0];
+
+  	// append(div,'<p>111</p>');
+
+  	// function append(dom,text) {
+  	// 	div.innerHTML = text;
+  	// }
+
+   var s = stringToDom('<div id="demo"><span><h2>标题</h2></span></div>')
+   console.log(s);//伪数组
+ 
+   document.getElementById('box').appendChild(s[0]);
+
+  	function stringToDom(str){
+  		var div = document.createElement('div');
+  		div.innerHTML = str;
+  		return div.childNodes; //返回的是一个伪数组
+  	}
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="myjquery2.0.js"></script>
+  <style>
+      button{
+        position: fixed;
+        right: 10px;
+        bottom: 20px;
+      }
+      /*div{
+        height: 300px;
+        background-color: green;
+        overflow: auto;
+      }*/
+    </style>   
+
+</head>
+<body>
+  <!-- <div> -->
+    <p>啦啦啦</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>哈哈</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>1111111</p>
+    <p>嘿嘿</p>
+<!-- </div> -->
+  <button id='btn'>回到顶部</button>
+  <script>
+   //滚动条的监听
+   window.onscroll = function() {
+     // console.log('正在滑动');
+     // //被卷去的高
+     // console.log(window.pageYOffset||document.body.scrollTop);
+     // //实际的高
+     // console.log(document.body.scrollHeight);
+     // //看到的内容的高度，窗口的高
+     // console.log(window.innerHeight);
+
+     //如果页面被卷去的高+ 窗口的高 =页面实际的高,说明到底了
+     if(window.pageYOffset + window.innerHeight==document.body.scrollHeight){
+        alert('到底了');
+     }
+     
+     document.getElementById('btn').onclick=function(){
+       //回到顶部
+       window.scrollTo(0,0);
+       //控制滚动条
+       document.body.scrollTop = 300;
+     }
+
+   }
+   //如果在外面加一个div
+   document.body.onclick = function(){
+      //div被卷去的高度
+     console.log($('div')[0].scrollTop);
+      //div实际的高度
+     console.log($('div')[0].scrollHeight);
+     //控制滚动条
+     $('div')[0].scrollTop = 300;
+   }
+
+  var div = document.getElementsByTagName('div')[0];
+  /*
+  div.offsetHeight:包含边框的高度
+  div.clientHeight:不包含边框的高度
+  div.scrollHeight:实际的高度(被卷去的+可见的+下面隐藏的)
+
+  div.offsetLeft:距离最近的有定位的父元素
+  div.offsetTop:父元素
+  
+  div.clientLeft:左边框的宽度
+
+  div.scrollTop:被卷去的高度
+  div.scrollLeft:被卷去的宽度
+  */
+
+
+  </script>
+</body>
+</html>

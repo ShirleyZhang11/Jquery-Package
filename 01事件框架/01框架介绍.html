@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+    <script src="jquery-3.0.0.js"></script>
+    <style type="text/css">
+    	.box1,.box2{
+    		width: 200px;
+    		height: 200px;
+    		background: yellow;
+    		border:2px solid gray;
+    		margin-top: 10px;
+    	}
+    	.item{
+    		
+    		width: 50px;
+    		height: 50px;
+    		background-color: red;
+    	}
+    </style>
+</head>
+<body>
+<!-- sublime3package control 插件 -->
+<!-- emmet   autoprefixer -->
+<!-- chm阅读器 -->
+
+   <div class="box1">
+    <div class="item">
+    	
+    </div>
+   </div>
+   <div class="box2">
+   	
+   </div>
+   <button onclick="fun()">点我</button>
+
+  <script type="text/javascript">
+  //两个div一起运动
+  	function fun() {
+  		$('.box1').animate({width:1000,height:200},'default');
+  		$('.box2').animate({width:1000,height:200},'linear');
+  	}
+  	/*  DOM二级事件：
+       mouseover(鼠标移入调用)   mouseout(鼠标移出调用)
+		  
+       DOM三级事件：
+    	 mouseenter(鼠标移入调用)  mouseleave(鼠标移出调用)
+			
+
+			区别: 使用mouseover给 dom 添加事件,如果元素有子视图,那么当鼠标进入到子视图范围时会再此触发事件
+			而使用mouseenter则不会,推荐使用mouseenter
+		*/
+
+	//用addEventListener给box添加mouseenter事件
+  	 $('.box1')[0].addEventListener('mouseenter',function(){
+  	 	$(this).animate({width:400,height:200});
+  	 });
+  	 $('.box1')[0].addEventListener('mouseleave',function(){
+
+  	 });
+
+    $('.box1').append('<p>23<p>');
+  </script>
+</body>
+</html>

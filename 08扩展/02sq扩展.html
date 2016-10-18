@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<!-- <script src="jquery-3.0.0.js"></script> -->
+	<script src="myjquery2.1.js"></script>
+</head>
+<body>
+ <div>1111</div>
+  <script>
+  	$('div').click(function(){
+  		$(this).css({color:'red'});
+  	})
+  	$.fn.extend({
+  		aaa:function(){
+  			alert('222');
+  		}
+  	})
+  	$('div').aaa();
+
+  </script>
+</body>
+</html>

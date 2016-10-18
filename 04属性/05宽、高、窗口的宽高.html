@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="myjquery2.0.js"></script>
+  <!-- <script src="jquery-3.0.0.js"></script> -->
+   <style>
+    	.box{
+    		width: 200px;
+    		height: 200px;
+    		background-color: red
+    	}
+    </style>
+
+</head>
+<body>
+  <div class="box" onclick="fun()"></div>
+  
+  <script>
+  	console.log($('.box').css('width')); //有px
+    console.log($('.box').width()); //没有px
+    
+    // //获取窗口的宽度
+    // //1、主流浏览器 谷歌 ff ie9
+    // console.log(window.innerWidth);
+    // //2、ie9以前
+    // console.log(document.documentElement.clientWidth);
+    // //3、混杂模式
+    // console.log(document.body.clientWidth)
+
+    // //包装窗口对象$(window)
+
+    function fun() {
+      $('.box').width(500);
+      console.log($(window).width()); //窗口
+      console.log($(window).height());
+    }
+   
+  </script>
+</body>
+</html>

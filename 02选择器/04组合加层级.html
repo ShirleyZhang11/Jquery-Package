@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>组合加层级选择</title>
+	<meta charset="utf-8">
+	<script src="myjquery-3.js"></script>
+</head>
+<body>
+  <div class="box">
+  	<div>
+  		<p></p>
+  	</div>
+  </div>
+
+  <div class="box">
+  	<div>
+  		<p></p>
+  	</div>
+  </div>
+
+   <div class="demo">  	
+  	 <h1></h1> 	
+  </div>
+
+  <script type="text/javascript">
+
+   var a = $.level('.box div p');
+   console.log(a);
+  	//.box div h1,.demo p
+    
+   var b = selectAll('.box div p,.demo h1');
+   console.log(b);
+
+  //组合加选择
+   function selectAll(selector){
+   	var result = [];
+   	var arr = selector.split(',');
+   //	.box div p,.demo h1 
+   	arr.forEach(function(elememt,index){
+      //使用层级选择器获取到指定的元素
+      var temp = $.level(elememt);
+      for(var i=0;i<temp.length;i++){
+        //将获取到的元素存入到result
+      	result.push(temp[i]);
+      }
+
+   	});
+   	return result;
+   }
+
+   var c = document.querySelector('.box  div p');
+   console.log(c);
+    
+   //系统原生的选择器，但是ie8以前不支持
+   var n = document.querySelectorAll('.box div p,.demo h1');
+   console.log(n);
+ 
+   /*
+    querySelector 与querySelectorAll的区别：
+     第一个方法只会返回符合条件的第一个元素
+      第二个方法会返回所有找到的元素
+    */
+  </script>
+</body>
+</html>

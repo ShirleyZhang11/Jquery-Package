@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="myjquery2.0.js"></script>
+
+</head>
+<body>
+
+  <h1>123</h1>
+  <div>点我</div>
+  
+  <input type="text" id="test" value="哈哈">
+  <br>
+  <!-- 下拉菜单 单选 -->
+  <select id="fruit">
+    <option>香蕉</option>
+    <option>苹果</option>
+  </select>
+  <br>
+  <!-- 下拉菜单 多选 -->
+   <select id="vagetable" multiple="multiple">
+    <option>黄瓜</option>
+    <option>番茄</option>
+    <option selected="selected">西兰花</option>
+  </select>
+  <br>
+  <br>
+  <!--复选框  -->
+  <input type="checkbox" name="r" value="check1">三国演义
+  <input type="checkbox" name="r" value="check2">西游记
+  <input type="checkbox" name="r" value="check3">水浒传
+  <br>
+  <!-- 单选框 -->
+  <input type="radio" value="radio1">男
+  <input type="radio" value="radio2">女
+
+  <script src="jquery-3.0.0.js"></script>
+  <!-- jquery中的val,利用表单来操作 -->
+  <script>
+
+    //测试
+    console.log($('h1').html());
+    $('div').html('haah');
+   
+
+    //基本用法，设置
+    $('#test').val("Hello world");
+
+    //下拉列表 单选
+     // console.log($('#fruit').val());
+   $('#fruit').val('香蕉');
+
+   // 下拉列表 多选
+    // console.log($('#vagetable').val());
+   $('#vagetable').val(["黄瓜","番茄"]);
+
+   //复选框
+   $("input[name='r']").val(["check1","check2"]);
+   //单选
+   $("input[type='radio']").val(["radio2"]);
+  </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="myjquery-2.js"></script>
+</head>
+<body>
+ <button id="btn"></button>
+
+ <div class="box selected">1</div>
+ <div class="box">2</div>
+ <div class="box selected">3</div>
+
+<script type="text/javascript">
+
+  /*function $(id){
+  	return document.getElementById(id);
+  }
+  */
+
+     var a = $.class('box');
+     console.log(a);
+/*
+//document.getElementsByClassName('') //兼容性不好
+
+
+	  //实现类名
+	 function $class(cls){
+	 	//找到页面中所有的元素*
+	 	var nodeList = document.getElementsByTagName('*');
+	 	//创建空数组，准备存放找到的元素
+	 	var result = [];
+	 	//循环找到的所有标签
+	 	for(var i=0;i<nodeList.length;i++){
+	 		//取出标签的类目
+	 		var classname = nodeList[i].className;
+	 		//如果存在类名
+	 		if(classname){
+	 			//classname = box selected 
+	 			//将元素的类名分割成数组
+	 			var arr = classname.split(' ');  //['box','selected']
+	 			//循环类名数组
+	 		    for(var j=0;j<arr.length;j++){
+	 			if(arr[j]==cls){
+	 				//将符合条件的元素加入到数组
+	 				result.push(nodeList[i]);
+	 			}
+	 		}
+	 		}
+	 		
+	 	}
+	 	return result;
+	 }
+	 	
+	 */
+	
+</script>
+</body>
+</html>

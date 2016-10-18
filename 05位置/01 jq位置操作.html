@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="myjquery2.0.js"></script>
+    <style>
+        *{
+        	padding: 0;
+        	margin: 0;
+        }
+    	.box{
+    		position: absolute;
+    		width: 300px;
+    		height: 300px;
+    		top:50px;
+    		left: 50px;
+    		background-color: red
+    	}
+    	.item{
+    		position: relative;
+    		width: 50px;
+    		height: 50px;
+    		background-color: green;
+    		left: 20px;
+    	}
+    	.little{
+    		position: relative;
+    		width: 20px;
+    		height: 20px;
+    		background-color: black;
+    		left: 10px;
+    	}
+    </style>
+
+</head>
+<body>
+  <div class="box">
+  	<div class="item">
+  		<div class="little"></div>
+  	</div>
+  </div>
+  <script>
+  	//绿色盒子
+  	var item = document.getElementsByClassName('item')[0];
+  	console.log(item.offsetLeft);
+
+  	//获取到最近的具有定位的父盒子,如果父盒子没有定位，就是body
+  	console.log(item.offsetParent);
+  	console.log(document.body.offsetParent);//body的父亲为空
+
+  	// while(parent){
+  	// 	left+=parent.offsetLeft;
+  	// 	parent = parent.offsetLeft;
+  	// }
+
+  	console.log($('.little').offset());
+  	console.log($('.little').position());
+
+  </script>
+</body>
+</html>

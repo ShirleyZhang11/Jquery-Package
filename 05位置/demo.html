@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-1.12.4.js"></script>
+</head>
+<body>
+
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	<script type="text/javascript">
+
+	//each forEach SQuery  JQuery
+
+	// forEach 循环数组
+	/*
+	var a = ['a','b'];
+	//ie9
+	a.forEach(function (ele,index) {
+		console.log(ele);
+		console.log(index);
+	})
+
+	$('li').each(function(index, el) {
+		// console.log(index);
+		console.log(el);
+		console.log(this)
+	});
+	*/
+
+	//this
+
+	// function F() {
+	// 	alert(this);
+
+	// 	this.each(function () {
+	// 		alert(this)
+	// 	})
+
+	// }
+	// F.prototype = {
+
+	// 	each: function (fn) {
+	// 		fn();
+	// 	}
+	// }
+
+	// new F();
+
+	Array.prototype.forEach = function (fn) {
+		
+		//循环
+		fn();
+	}
+	
+	var a = ['a','b'];
+	//ie9
+	a.forEach(function (ele,index) {
+		alert(this);//this指window,根据forEach方法里的封装
+	})
+
+	</script>
+</body>
+</html>

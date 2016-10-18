@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<!-- <script src="jquery-3.0.0.js"></script> -->
+	<script src="myjquery2.0.js"></script>
+ 
+	<style>
+		ul li{
+			list-style: none;
+			width:50px;
+			height: 50px;
+			text-align: center;
+			line-height: 50px;
+			margin-left: 20px;
+			background: lightgray;
+			float: left;
+		}
+		.select{
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+  <ul>
+  	<li class="select">1</li>
+  	<li>2</li>
+  	<li>3</li>
+  	<li>4</li>
+  	<li>5</li>
+  	<li>6</li>
+  	<li>7</li>
+  	<li>8</li>
+  </ul>
+
+   <script>
+   	 $('li').click(function () {
+   	 	$(this).addClass('select');
+   	 	$(this).siblings().removeClass('select');
+   	 	
+   	 });
+    var result = $('li').siblings();
+   	console.log(result);
+     // //获取节点的前一个兄弟节点
+   	 // console.log($('li')[1].previousSibling);
+   	 // //获取节点的后一个兄弟节点
+   	 // console.log($('li')[1].nextSibling);
+
+    // var result = siblings($('li')[2]);
+    // console.log(result);
+
+   	 // function siblings(ele){
+   	 // 	var pre = ele.previousSibling;
+   	 // 	// console.log(pre);
+   	 // 	var r=[];
+   	 // 	while(pre){
+   	 // 		if(pre.nodeType ==1){//普通的节点
+   	 // 		  r.push(pre);
+   	 // 		}
+   	 // 		pre=pre.previousSibling;
+   	 // 	}
+   	 // 	r.reverse(); //因为查找的时候是倒着的,用reverse倒过来
+   	 	
+   	 // 	var next =ele.nextSibling;
+   	 // 	while(next){
+   	 // 		if(next.nodeType==1){
+   	 // 			r.push(next);
+   	 // 		}
+   	 // 		next = next.nextSibling;
+   	 // 	}
+   	 // 	return r;
+   	 // }
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>层级选择</title>
+	<meta charset="utf-8">
+  <script src="myjquery-3.js"></script>
+</head>
+<body>
+  <div class="box">
+  	<div id="item">
+  		<span class="test">
+  			<h1>666</h1>
+  		</span>
+
+  	</div>
+  </div>
+
+  <script type="text/javascript">
+
+   var a = $.level('.box #item .test');
+   console.log(a);
+
+  //$('#box .item .test h1')
+  	// function level(selector) {
+  	//   var parents =[];
+  	//   var temp = [];
+  	//   var arr = selector.split(' ');
+
+  	//  arr.forEach(function(element,index){
+   //    //如果parents为空，则传入document
+   //    if(!parents.length){
+   //      parents.push(document);
+   //    }   
+  	  
+   //    var firstChar = element.charAt(0);
+  	//   	switch(firstChar){
+
+   //        case '#':
+   //        //一定要清空，不然temp中会重复，因为temp中保存的是上一次找到的节点
+   //           temp =[];
+   //           temp.push($.id(element.substring(1)));
+   //         //将本次找到的节点，放入到parents中，以备下次查询
+   //           parents = temp;
+   //         break;
+
+  	//   		case '.': //.box
+   //          temp=[];
+   //          //拿出所有的父亲  temp[box]
+   //          for(var i = 0;i<parents.length;i++){
+   //            //找出parents[i]下面的所有类目为box的节点
+   //            var r = $.class(element.substring(1),parents[i]); 
+   //            //将r数组中的内容全部保存到temp中           
+   //            Array.prototype.push.apply(temp,r);
+   //          }
+   //          parents = temp;
+  	//   		 break;
+
+  	//   		default:
+   //         temp=[];//.box #item
+   //         for(var i =0;i<parents.length;i++){
+   //          //找出parents[i]下面的所有标签名为...的节点
+   //          var r = $.tag(element,parents[i]);
+   //          Array.prototype.push.apply(temp,r);
+   //         }
+   //         parents = temp;
+  	//   		break;
+  	//   	}
+  	//   });
+   //   //最后放回temp,不管循环了多少次，最后temp总是保存了最后一次找到的内容
+   //   return temp;
+  	// }
+  </script>
+</body>
+</html>

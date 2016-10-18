@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="jquery-3.0.0.js"></script>
+
+</head>
+<body>
+  <div style="background-color:red"></div>
+  <button id="btn">按钮</button>
+  <script>
+  	//1、
+  	$('div').html('<p>haha</p>');
+  	$('div').append('<p>haha</p>');
+
+  	$('div').append(document.getElementById('btn'));
+
+  	$('<h1>标题</h1>').appendTo($('div'));
+  </script>
+</body>
+</html>

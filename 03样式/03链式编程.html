@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jq链式编程</title>
+	<meta charset="utf-8">
+	<!-- <script src="jquery-3.0.0.js"></script> -->
+  <script src ="myjquery-5链式编程.js"></script>
+  <script src = "myjquery-5.0.js"></script>
+</head>
+<body>
+  <ul>
+  	<li>1</li>
+  	<li>2</li>
+  	<li>3</li>
+  	<li>4</li>
+  </ul>
+  <script>
+  // //链式编程
+  //  $('li').css('color').click(function () {
+  //    alert(this.innerHTML); 
+  // }); //错误。css返回值只是颜色,不能再进行click
+
+  // //后面为对象才可以继续进行链式
+  //  $.css('li','color','red').on('li','click',function(){
+  //     alert(1);
+  //  });
+  
+ // $('li').css().on().show().hide();
+
+  // $.selectAll('li').css('color','red').on('click',function(){
+  //   alert(this); //this指li
+  // });
+
+   ////创建对象的方式
+  // new Squery('li').css('color','red');
+  //把new隐藏到$方法中
+   $('li').css('color','red').on('click',function(){
+    alert(this.innerHTML); //this指li
+  });
+   //获取到查到的真正的dom元素
+  console.log($('li').elements);
+  console.log($('li')[0]);
+
+  //JS表示对象的两种方式
+    /*
+    //第一种方式
+    function Person() {
+       this.name = 'zhangsan';
+       this.age = 55;
+    }
+    Person.prototype = {
+      eat : function () {
+         alert('吃黄门机'); 
+      }
+    }
+
+    var p = new Person();
+    console.log(p)
+
+    //对象字面量形式
+    var $ = {
+      name:"zhangsan",
+      age:55,
+      eat:function () {
+          
+      }
+    }
+    */
+  
+  </script>
+</body>
+</html>

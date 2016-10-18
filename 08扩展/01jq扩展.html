@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="jquery-3.0.0.js"></script>
+</head>
+<body>
+  <div></div>
+  <script>
+  	$.fn.extend({
+  		aa:function(){
+  			alert('adf');
+  		}
+  	})
+
+  	//扩展jq对象
+  	 $('div').aa(); //弹出adf
+
+    $.extend({
+    	aa:function(){
+  			alert('adf');
+  		}
+    })
+    //扩展$
+    $.aa(); //也弹出
+
+   function Person(){
+   	this.name='zhangsan';
+   	this.age = 22;
+   }
+   var p =new Person();
+   var a = {sex:'男',height:1.7};
+
+   //将a对象的属性扩展到p上
+   extend(a,p);
+   console.log(p);
+   function extend(obj,target){
+   	//遍历a
+   	for(key in obj){
+       target[key]=obj[key];
+   	}
+   }
+  </script>
+</body>
+</html>

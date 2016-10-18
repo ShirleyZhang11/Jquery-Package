@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css样式</title>
+	<meta charset="utf-8">
+
+	<style>
+	</style>
+  <script src="myjquery-4.js"></script>
+</head>
+<body>
+   <div class="box" style="color:red">1</div>
+   <div class="box" style="color:green">2</div>
+
+  <script type="text/javascript">
+   var box = document.getElementsByClassName('box');
+   /*
+    1、传入的第一个参数是字符串 '.box'选择器 box(一个dom元素) box(多个dom元素)
+    2、传入的第二个参数可能是字符串，对象(先不考虑)
+    3、如果传入了第三个参数，只能是设置
+   */
+    
+    // //给box设置样式
+     // css(box,'width','200px');
+     // css(box,'height','200px');
+     css('.box','backgroundColor','pink');
+
+     //获取样式
+     var w = css(box,'width');
+     console.log(w); 
+     
+   function css(element,key,value) {
+      var node = typeof(element)==='string' ? $.selectAll(element):element;
+
+      //不是一个数组
+      if(!node.length){
+        node =[node];
+      }
+        
+    for (var i = 0; i < node.length; i++) {
+            //设置
+        if(value){
+          setStyle(node[i],key,value);
+        }else{
+          return getStyle(node[0],key);
+        }
+      }
+
+        //获取计算后的样式//如果没有传入value值，则代表获取
+         function getStyle(dom, key) {
+            if (dom.currentStyle) {
+                return dom.currentStyle[key];
+            } else {
+                return getComputedStyle(dom, null)[key];
+            }
+        }
+
+        function setStyle(dom, key, value) {
+            dom.style[key] = value;
+        }
+    }
+
+    
+  	
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+</head>
+<body>
+   
+    <script>
+   //  //会被覆盖
+   //     window.onload = function(){
+			// alert(1);
+   //     }
+   //     window.onload = function(){
+			// alert(2);
+   //     }
+     //不会被覆盖
+    	$(function() {
+    		alert(1);
+    	})
+    	$(function(){
+    		alert(2);
+    	})
+    	$(function(){
+    		alert(3);
+    	})
+
+    	function $(fn){
+    		var old = window.onload;
+    		if(typeof(old)!='function'){
+    			window.onload = fn;
+    		}else{
+    			window.onload = function(){
+    				//先执行原来的,后执行后面的,不会被覆盖
+    				old();
+    				fn();
+    			}
+    		}
+    	}
+    </script>
+</body>
+</html>

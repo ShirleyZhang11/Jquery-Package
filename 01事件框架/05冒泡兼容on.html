@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="myjquery-1.js"></script>
+</head>
+<body>
+  <div id="box" style="width:50px;height:50px;background:red;">
+  	box
+  </div>
+  <script type="text/javascript">
+  	// //jquery中的添加事件on
+  	// $('#box').on('click',function () {
+  		
+  	// })
+ 
+   // on(document.getElementById('box'),'click',function(){
+   //  	alert(124);
+   //  })
+
+   //自己封装on方法
+  $.on(document.body,'click',function(event){
+    //字符串,对象...
+    var event =event||window.event;
+    var target = event.target||event.srcElement;
+    alert(2);
+
+  });
+  //使用框架里的方法
+  $.on(document.getElementById('box'),'click',function(){
+     var event = $.getEvent(event);
+     var target = $.getTarget(event);
+     $.stopPropa(event);
+     console.log(event);
+
+  });
+  </script>
+</body>
+</html>
